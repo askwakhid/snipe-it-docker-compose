@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mysql:
+    image: ${MYSQL_IMAGE}
+    container_name: ${MYSQL_HOSTNAME}
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    expose:
+      - "3306"
+    volumes:
+      - ./${MYSQL_VOLUME}:/var/lib/mysql/:rw
+
+  snipeit:
+    image: ${SNIPEIT_IMAGE}
+    container_name: ${SNIPEIT_HOSTNAME}
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "3002:80"
+    depends_on:
+      - mysql

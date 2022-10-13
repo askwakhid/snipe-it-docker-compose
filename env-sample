@@ -1,0 +1,25 @@
+# snipeit vars
+SNIPEIT_IMAGE="snipe/snipe-it:latest"
+SNIPEIT_HOSTNAME="snipeit-server"
+
+# mysql vars
+MYSQL_IMAGE="mariadb:latest"
+MYSQL_HOSTNAME="mariadb-server"
+MYSQL_ROOT_PASSWORD="changeme"
+MYSQL_VOLUME="snipeit-mysql"
+
+# snipe it config vars
+# Mysql Parameters
+MYSQL_PORT_3306_TCP_ADDR=mysql
+MYSQL_PORT_3306_TCP_PORT=3306
+MYSQL_DATABASE=snipeit
+MYSQL_USER=snipeit
+MYSQL_PASSWORD=snipeit
+
+# Snipe-IT Settings
+APP_ENV=production
+APP_DEBUG=false
+APP_KEY={{INSERT_API_TOKEN}}
+APP_URL=http://127.0.0.1:3002
+APP_TIMEZONE=Asia/Jakarta
+APP_LOCALE=en
